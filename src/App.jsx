@@ -24,7 +24,7 @@ const App = () => {
       : null;
     setUserState(userInfoFromLocalStorage);
   }, []);
-
+  console.log(process.env.REACT_APP_API_URL)
   return (
     <ThemeProvider theme={themeConfigs.custom({ mode: themeMode })}>
       {/* config toastify */}

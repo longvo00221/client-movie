@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const baseURL = "https://backend-movie-longvo00221.vercel.app/api/v1/";
+const baseURL = process.env.REACT_APP_API_URL;
 const user = JSON.parse(localStorage.getItem("user"));
 const privateClient = axios.create({
   baseURL,
