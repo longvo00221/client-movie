@@ -206,7 +206,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
                     <Button
                       variant="contained"
                       size="large"
-                      startIcon={<PlayArrowIcon />}
+                      starticon={<PlayArrowIcon />}
                       component={Link}
                       to={routesGen.mediaDetail(mediaType, movie.id)}
                       sx={{ width: "max-content" }}

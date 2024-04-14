@@ -57,6 +57,12 @@ const MediaSearch = () => {
       setQuery(newQuery);
     }, timeout);
   };
+  window.onscroll = function() {
+    if(window.scrollY + window.innerHeight >= window.document.body.offsetHeight - 100){
+      setPage(page + 1)
+    }
+
+  }
   return (
     <>
       <Toolbar />
@@ -101,11 +107,11 @@ const MediaSearch = () => {
               <MediaGrid medias={medias} mediaType={mediaType} />
     
     
-              {medias.length > 0 && (
+              {/* {medias.length > 0 && (
                 <Button variant="contained" style={{width:"100%",marginTop:"20px"}} loading={onSearch} onClick={() => setPage(page + 1)}>
                   load more
                 </Button>
-              )}
+              )} */}
             </Box>
           </Box >
         </Stack>

@@ -319,7 +319,7 @@ const MediaDetail = () => {
                       "& .MuiButon-starIcon": { marginRight: "0" },
                     }}
                     size="large"
-                    startIcon={
+                    starticon={
                       isFavorite ? (
                         <FavoriteIcon />
                       ) : (
@@ -334,7 +334,7 @@ const MediaDetail = () => {
                     variant="contained"
                     sx={{ width: "max-content" }}
                     size="large"
-                    startIcon={<PlayArrowIcon />}
+                    starticon={<PlayArrowIcon />}
                     // onClick={() => handleShowMovieById(media.id)}
                   >
                     {mediaType === "tv" ? (

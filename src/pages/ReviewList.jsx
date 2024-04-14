@@ -81,7 +81,7 @@ const ReviewItem = ({ review, onRemoved }) => {
           marginTop: { xs: 2, md: 0 },
           width: "max-content"
         }}
-        startIcon={<DeleteIcon />}
+        starticon={<DeleteIcon />}
         loadingPosition="start"
         loading={onRequest}
         onClick={onRemove}

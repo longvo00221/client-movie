@@ -233,7 +233,7 @@ const TvSeries = ({
                         <PlayCircleIcon
                           className="media-play-btn"
                           variant="contained"
-                          startIcon={<PlayCircleIcon />}
+                          starticon={<PlayCircleIcon />}
                           sx={{
                             display: { xs: "flex", md: "flex" },
                             opacity: 0,
@@ -245,7 +245,7 @@ const TvSeries = ({
                             color: "rgba(255,255,255,0.6)",
                             transform: "translate(-50%, -50%)",
                             zIndex: 10,
-                            "& .MuiButton-startIcon": { marginRight: "-4px" },
+                            "& .MuiButton-starticon": { marginRight: "-4px" },
                           }}
                         />
                       </Box>

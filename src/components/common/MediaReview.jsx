@@ -59,7 +59,7 @@ const ReviewItem = ({ review, onRemoved }) => {
           {userState && userState.id === review.userState.id && (
             <LoadingButton
               variant="contained"
-              startIcon={<DeleteIcon />}
+              starticon={<DeleteIcon />}
               loadingPosition="start"
               loading={onRequest}
               onClick={onRemove}
@@ -178,7 +178,7 @@ const MediaReview = ({ reviews, media, mediaType }) => {
                   variant="contained"
                   size="large"
                   sx={{ width: "max-content" }}
-                  startIcon={<SendOutlinedIcon />}
+                  starticon={<SendOutlinedIcon />}
                   loadingPosition="start"
                   loading={onRequest}
                   onClick={onAddReview}

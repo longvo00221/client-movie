@@ -101,7 +101,7 @@ const MediaItem = ({ media, mediaType }) => {
             <PlayCircleIcon
               className="media-play-btn"
               variant="contained"
-              startIcon={<PlayCircleIcon />}
+              starticon={<PlayCircleIcon />}
               sx={{
                 display: { xs: "none", md: "flex" },
                 opacity: 0,
@@ -111,7 +111,7 @@ const MediaItem = ({ media, mediaType }) => {
                 left: "50%",
                 fontSize: "55px",
                 transform: "translate(-50%, -50%)",
-                "& .MuiButton-startIcon": { marginRight: "-4px" },
+                "& .MuiButton-starticon": { marginRight: "-4px" },
               }}
             />
             <Box

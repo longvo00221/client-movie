@@ -76,7 +76,12 @@ const MediaList = () => {
   };
 
   const onLoadMore = () => setCurrPage(currPage + 1);
+  window.onscroll = function() {
+    if(window.scrollY + window.innerHeight >= window.document.body.offsetHeight - 100){
+      onLoadMore()
+    }
 
+  }
   return (
     <>
       <HeroSlide mediaType={mediaType} mediaCategory={mediaCategories[currCategory]} />
@@ -111,7 +116,7 @@ const MediaList = () => {
           medias={medias}
           mediaType={mediaType}
         />
-        <LoadingButton
+        {/* <LoadingButton
           sx={{ marginTop: 8 }}
           fullWidth
           color="primary"
@@ -119,7 +124,7 @@ const MediaList = () => {
           onClick={onLoadMore}
         >
           load more
-        </LoadingButton>
+        </LoadingButton> */}
       </Box>
     </>
   );

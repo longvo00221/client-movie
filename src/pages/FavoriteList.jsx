@@ -36,7 +36,7 @@ const FavoriteItem = ({ media, onRemoved }) => {
       fullWidth
       variant="contained"
       sx={{ marginTop: 2 }}
-      startIcon={<DeleteIcon />}
+      starticon={<DeleteIcon />}
       loadingPosition="start"
       loading={onRequest}
       onClick={onRemove}
@@ -84,7 +84,12 @@ const FavoriteList = () => {
     setFilteredMedias([...newMedias].splice(0, page * skip));
     setCount(count - 1);
   };
+  window.onscroll = function() {
+    if(window.scrollY + window.innerHeight >= window.document.body.offsetHeight - 100){
+      onLoadMore()
+    }
 
+  }
   return (
     <Box sx={{ ...uiConfigs.style.mainContent }}>
       <Container header={`Your favorites (${count})`}>
