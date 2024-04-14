@@ -1,17 +1,16 @@
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import { LoadingButton } from "@mui/lab";
 import { Box, Button, Divider, Stack, TextField, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
-import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { toast } from "react-toastify";
 import dayjs from "dayjs";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Container from "./Container";
+import { toast } from "react-toastify";
 import reviewApi from "../../api/modules/review.api";
+import Container from "./Container";
 import TextAvatar from "./TextAvatar";
 
 const ReviewItem = ({ review, onRemoved }) => {
-  const { user } = useSelector((state) => state.user);
   const [userState , setUserState] = useState({})
   useEffect(() => {
     const userInfoFromLocalStorage = localStorage.getItem("user")

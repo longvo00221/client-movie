@@ -1,13 +1,7 @@
-import { Paper, Stack, Button, Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import Container from "./Container";
-import Logo from "./Logo";
-import menuConfigs from "../../configs/menu.configs";
-import { Link } from "react-router-dom";
-import { Link as LinkMui } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import { themeModes } from "../../configs/theme.configs";
 import { useSelector } from "react-redux";
+import Container from "./Container";
 const Footer = () => {
   const { themeMode } = useSelector((state) => state.themeMode);
   const isLightTheme = themeMode === "light";

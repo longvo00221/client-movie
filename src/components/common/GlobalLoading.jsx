@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
-import { Paper, Box, LinearProgress, Toolbar } from "@mui/material";
+import { Box, Paper, Toolbar } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import "../css/Loading.css";
 import "../css/Logo.css";
 const GlobalLoading = () => {

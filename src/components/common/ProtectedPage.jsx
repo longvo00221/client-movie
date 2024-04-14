@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setAuthModalOpen } from "../../redux/features/authModalSlice";
 
 // const { user } = useSelector((state) => state.user);
 const ProtectedPage = ({ children }) => {

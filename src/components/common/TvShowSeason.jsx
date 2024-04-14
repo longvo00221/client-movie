@@ -1,13 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useTheme } from "@mui/material/styles";
-import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import Select from "@mui/material/Select";
+import { useTheme } from "@mui/material/styles";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { setSeasonState } from "../../redux/features/tvShowSlice";
 const TvShowSeason = ({ seasons, movieName, rate, popularity }) => {
   const theme = useTheme();

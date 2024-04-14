@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import MenuIcon from "@mui/icons-material/Menu";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import {
   AppBar,
@@ -9,19 +9,19 @@ import {
   IconButton,
   Stack,
   Toolbar,
+  useMediaQuery,
   useScrollTrigger,
 } from "@mui/material";
 import { cloneElement, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import symbolLogo from "../../assets/Netflix_Symbol/symbol.png";
 import menuConfigs from "../../configs/menu.configs";
 import { themeModes } from "../../configs/theme.configs";
 import { setThemeMode } from "../../redux/features/themeModeSlice";
 import Logo from "./Logo";
-import UserMenu from "./UserMenu";
 import Sidebar from "./Sidebar";
-import { useMediaQuery } from "@mui/material";
-import symbolLogo from "../../assets/Netflix_Symbol/symbol.png";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import UserMenu from "./UserMenu";
 const ScrollAppBar = ({ children, window }) => {
   const { themeMode } = useSelector((state) => state.themeMode);
 
@@ -48,7 +48,6 @@ const ScrollAppBar = ({ children, window }) => {
   });
 };
 const Topbar = () => {
-  const { user } = useSelector((state) => state.user);
   const [userState, setUserState] = useState({});
   useEffect(() => {
     const userInfoFromLocalStorage = localStorage.getItem("user")

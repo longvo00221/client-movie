@@ -1,18 +1,15 @@
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { useEffect, useState,useRef } from "react";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import { Box, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import uiConfigs from "../../configs/ui.configs";
 import { routesGen } from "../../routes/routes";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import CircularRate from "./CircularRate";
-import { useSelector ,useDispatch } from "react-redux";
 import favoriteUtils from "../../utils/favorite.utils";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import CircularRate from "./CircularRate";
 
-import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
-import { setAuthModalOpen } from "../../redux/features/authModalSlice";
 const MediaItem = ({ media, mediaType }) => {
   const { listFavorites } = useSelector((state) => state.user);
 
@@ -20,7 +17,6 @@ const MediaItem = ({ media, mediaType }) => {
   const [posterPath, setPosterPath] = useState("");
   const [releaseDate, setReleaseDate] = useState(null);
   const [rate, setRate] = useState(null);
-  const dispatch = useDispatch()
   useEffect(() => {
     setTitle(media.title || media.name || media.mediaTitle);
 

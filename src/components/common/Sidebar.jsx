@@ -1,3 +1,5 @@
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import {
   Button,
   Drawer,
@@ -5,25 +7,21 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Stack,
   Toolbar,
   Typography,
-  useMediaQuery,
+  useMediaQuery
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import menuConfigs from "../../configs/menu.configs";
-import Logo from "./Logo";
 import uiConfigs from "../../configs/ui.configs";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 
-import { themeModes } from "../../configs/theme.configs";
-import { setThemeMode } from "../../redux/features/themeModeSlice";
-import { setUser } from "../../redux/features/userSlice";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { useEffect, useState } from "react";
 import userApi from "../../api/modules/user.api";
+import { themeModes } from "../../configs/theme.configs";
+import { setThemeMode } from "../../redux/features/themeModeSlice";
+import { setUser } from "../../redux/features/userSlice";
 const Sidebar = ({ open, toggleSidebar }) => {
   const dispatch = useDispatch();
 

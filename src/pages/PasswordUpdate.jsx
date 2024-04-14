@@ -1,17 +1,16 @@
 import { LoadingButton } from "@mui/lab";
 import { Box, Stack, TextField } from "@mui/material";
 import { useFormik } from "formik";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import * as Yup from "yup";
+import userApi from "../api/modules/user.api";
 import Container from "../components/common/Container";
 import uiConfigs from "../configs/ui.configs";
-import { useState } from "react";
-import userApi from "../api/modules/user.api";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setUser } from "../redux/features/userSlice";
 import { setAuthModalOpen } from "../redux/features/authModalSlice";
-import background from "../assets/img/background.jpg";
+import { setUser } from "../redux/features/userSlice";
 const PasswordUpdate = () => {
   const [onRequest, setOnRequest] = useState(false);
 

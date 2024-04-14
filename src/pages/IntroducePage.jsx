@@ -1,16 +1,16 @@
 import {
   Box,
-  Button,
+  // Button,
   Grid,
-  Paper,
-  TextField,
+  // Paper,
+  // TextField,
   Typography,
   useMediaQuery,
-  useTheme,
+  // useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 import background from "../assets/img/background.jpg";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import tv from "../assets/img/tvnobg.png";
 import video1 from "../assets/img/videobg.m4v";
 import mobileBg from "../assets/img/mobilebg.png";
@@ -24,11 +24,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import userApi from "../api/modules/user.api";
 import { setUser } from "../redux/features/userSlice";
-import { LoadingButton } from "@mui/lab";
+// import { LoadingButton } from "@mui/lab";
 import { toast } from "react-toastify";
 const IntroducePage = () => {
   const { themeMode } = useSelector((state) => state.themeMode);
-  const isLightTheme = themeMode === "light";
+  const isLightTheme = themeMode === "light"; 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isLoginRequest, setIsLoginRequest] = useState(false);
@@ -133,7 +133,7 @@ const IntroducePage = () => {
             Ready to watch? Enter your email to create or restart your
             membership.
           </Typography>
-          {checkIntroState && !isMobile ? (
+          {/* {checkIntroState && !isMobile ? (
             <Box
               component="form"
               onSubmit={signinForm.handleSubmit}
@@ -239,7 +239,7 @@ const IntroducePage = () => {
             >
               Let Start
             </Button>
-          )}
+          )} */}
         </Box>
       </Box>
       <Box

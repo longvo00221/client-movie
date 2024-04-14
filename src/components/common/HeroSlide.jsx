@@ -8,13 +8,12 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { toast } from "react-toastify";
-import MediaVideosSlide from "../common/MediaVideosSlide";
 import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
 import { routesGen } from "../../routes/routes";
 

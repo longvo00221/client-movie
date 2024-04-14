@@ -1,30 +1,26 @@
 import {
   Box,
   Chip,
-  Container,
   Divider,
-  Grow,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { Stack } from "@mui/system";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { Autoplay } from "swiper";
-import { SwiperSlide, Swiper } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper";
+import "swiper/css/effect-fade";
+import { Swiper, SwiperSlide } from "swiper/react";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import genreApi from "../../api/modules/genre.api";
 import mediaApi from "../../api/modules/media.api";
 import uiConfigs from "../../configs/ui.configs";
 import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
-import CircularRate from "./CircularRate";
-import { EffectFade } from "swiper";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "swiper/css/effect-fade";
-import '../css/ScreenSaver.css'
+import '../css/ScreenSaver.css';
 
 const SCREENSAVER_DELAY_MS = 60000;
 const SCREENSAVER_ACTIVE_TIME_MS = 10000000000;

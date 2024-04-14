@@ -1,38 +1,38 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
+import { Close } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { Close } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
 import { Box, Button, Chip, Divider, Stack, Typography } from "@mui/material";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import Backdrop from "@mui/material/Backdrop";
+import tmdbConfigs from "../api/configs/tmdb.configs";
+import favoriteApi from "../api/modules/favorite.api";
+import mediaApi from "../api/modules/media.api";
+import BackdropSlide from "../components/common/BackdropSlide";
+import CastSlide from "../components/common/CastSlide";
 import CircularRate from "../components/common/CircularRate";
 import Container from "../components/common/Container";
 import ImageHeader from "../components/common/ImageHeader";
-import uiConfigs from "../configs/ui.configs";
-import tmdbConfigs from "../api/configs/tmdb.configs";
-import mediaApi from "../api/modules/media.api";
-import favoriteApi from "../api/modules/favorite.api";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
-import { setAuthModalOpen } from "../redux/features/authModalSlice";
-import { addFavorite, removeFavorite } from "../redux/features/userSlice";
-import CastSlide from "../components/common/CastSlide";
+import MediaReview from "../components/common/MediaReview";
+import MediaSlide from "../components/common/MediaSlide";
 import MediaVideosSlide from "../components/common/MediaVideosSlide";
-import BackdropSlide from "../components/common/BackdropSlide";
 import PosterSlide from "../components/common/PosterSlide";
 import RecommendSlide from "../components/common/RecommendSlide";
-import MediaSlide from "../components/common/MediaSlide";
-import MediaReview from "../components/common/MediaReview";
 import TvSeries from "../components/common/TvSeries";
-import Backdrop from "@mui/material/Backdrop";
+import uiConfigs from "../configs/ui.configs";
+import { setAuthModalOpen } from "../redux/features/authModalSlice";
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
+import { addFavorite, removeFavorite } from "../redux/features/userSlice";
 
-import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import Modal from "@mui/material/Modal";
 import IframeMedia from "../components/common/IframeMedia";
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
@@ -274,11 +274,10 @@ const MediaDetail = () => {
                   fontWeight="700"
                   sx={{ ...uiConfigs.style.typoLines(2, "left") }}
                 >
-                  {`${media.title || media.name} ${
-                    mediaType === tmdbConfigs.mediaType.movie
+                  {`${media.title || media.name} ${mediaType === tmdbConfigs.mediaType.movie
                       ? media.release_date.split("-")[0]
                       : media.first_air_date.split("-")[0]
-                  }`}
+                    }`}
                 </Typography>
                 {/* title */}
 
@@ -335,7 +334,7 @@ const MediaDetail = () => {
                     sx={{ width: "max-content" }}
                     size="large"
                     starticon={<PlayArrowIcon />}
-                    // onClick={() => handleShowMovieById(media.id)}
+                  // onClick={() => handleShowMovieById(media.id)}
                   >
                     {mediaType === "tv" ? (
                       <div onClick={handleOpen}>watch now</div>
@@ -355,19 +354,19 @@ const MediaDetail = () => {
                   <CastSlide casts={media.credits.cast} />
                 </Container>
                 {showIframe && (
-                  
-                    <div
-                      style={{
-                        position: "fixed",
-                       inset:"0",
-                       padding:"50px",
-                        zIndex:999999
-                      }}
-                    >
-                      <div style={{padding:"10px",cursor:"pointer"}} onClick={()=>setShowIframe(false)}><Close/></div>
-                      <IframeMedia id={mediaIdMovie} />
-                    </div>
-                 
+
+                  <div
+                    style={{
+                      position: "fixed",
+                      inset: "0",
+                      padding: "50px",
+                      zIndex: 999999
+                    }}
+                  >
+                    <div style={{ padding: "10px", cursor: "pointer" }} onClick={() => setShowIframe(false)}><Close /></div>
+                    <IframeMedia id={mediaIdMovie} />
+                  </div>
+
                 )}
                 {/* cast */}
               </Stack>

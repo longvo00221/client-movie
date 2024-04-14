@@ -17,7 +17,6 @@ import "./App.css";
 import { useState } from "react";
 const App = () => {
   const { themeMode } = useSelector((state) => state.themeMode);
-  const { user } = useSelector((state) => state.user);
   const [userState, setUserState] = useState({});
   useEffect(() => {
     const userInfoFromLocalStorage = localStorage.getItem("user")

@@ -1,17 +1,17 @@
 import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
+import { toast } from "react-toastify";
+import tmdbConfigs from "../../api/configs/tmdb.configs";
+import favoriteApi from "../../api/modules/favorite.api";
+import userApi from "../../api/modules/user.api";
+import { setListFavorites, setUser } from "../../redux/features/userSlice";
+import AuthModal from "../common/AuthModal";
 import Footer from "../common/Footer";
 import GlobalLoading from "../common/GlobalLoading";
-import Topbar from "../common/Topbar";
-import AuthModal from "../common/AuthModal";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import userApi from "../../api/modules/user.api";
-import favoriteApi from "../../api/modules/favorite.api";
-import { setListFavorites, setUser } from "../../redux/features/userSlice";
 import ScreenSaver from "../common/ScreenSaver";
-import tmdbConfigs from "../../api/configs/tmdb.configs";
+import Topbar from "../common/Topbar";
 
 const MainLayout = () => {
   const dispatch = useDispatch();

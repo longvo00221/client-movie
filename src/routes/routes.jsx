@@ -1,14 +1,12 @@
-import HomePage from "../pages/HomePage";
-import PersonDetail from "../pages/PersonDetail";
+import ProtectedPage from "../components/common/ProtectedPage";
 import FavoriteList from "../pages/FavoriteList";
+import HomePage from "../pages/HomePage";
 import MediaDetail from "../pages/MediaDetail";
 import MediaList from "../pages/MediaList";
 import MediaSearch from "../pages/MediaSearch";
 import PasswordUpdate from "../pages/PasswordUpdate";
+import PersonDetail from "../pages/PersonDetail";
 import ReviewList from "../pages/ReviewList";
-import ProtectedPage from "../components/common/ProtectedPage";
-import SigninPage from "../pages/Signin";
-import SignupPage from "../pages/Signup";
 
 
 export const routesGen = {

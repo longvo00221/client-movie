@@ -4,10 +4,10 @@ import { Box, Button, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import MediaItem from "../components/common/MediaItem";
-import Container from "../components/common/Container";
-import uiConfigs from "../configs/ui.configs";
 import favoriteApi from "../api/modules/favorite.api";
+import Container from "../components/common/Container";
+import MediaItem from "../components/common/MediaItem";
+import uiConfigs from "../configs/ui.configs";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import { removeFavorite } from "../redux/features/userSlice";
 

@@ -1,28 +1,26 @@
+import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
+import ArrowDropUpOutlinedIcon from "@mui/icons-material/ArrowDropUpOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import SettingsIcon from "@mui/icons-material/Settings";
 import {
   Button,
+  ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
   Menu,
   Typography,
-  useMediaQuery,
-  MenuItem,
-  Paper,
-  ListItem,
+  useMediaQuery
 } from "@mui/material";
+import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import userApi from "../../api/modules/user.api";
+import avatar from "../../assets/img/NetflixAvatar.png";
 import menuConfigs from "../../configs/menu.configs";
 import { setUser } from "../../redux/features/userSlice";
-import avatar from "../../assets/img/NetflixAvatar.png";
-import { Box } from "@mui/system";
-import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
-import ArrowDropUpOutlinedIcon from "@mui/icons-material/ArrowDropUpOutlined";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import userApi from "../../api/modules/user.api";
-import SettingsIcon from "@mui/icons-material/Settings";
 const UserMenu = () => {
   const { user } = useSelector((state) => state.user);
   const [userState, setUserState] = useState({});

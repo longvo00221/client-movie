@@ -1,7 +1,5 @@
 import privateClient from "../client/private.client";
 import publicClient from "../client/public.client";
-import userSlice from "../../redux/features/userSlice";
-import { useDispatch } from "react-redux";
 const userEndpoints = {
   signin: "user/signin",
   signup: "user/signup",
