@@ -19,68 +19,68 @@ import downloadGif from "../assets/img/download-icon.gif";
 import minibgmobile from "../assets/img/minibgmobile.png";
 import kidBg from "../assets/img/kid.png";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import userApi from "../api/modules/user.api";
-import { setUser } from "../redux/features/userSlice";
+// import { useNavigate } from "react-router-dom";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
+// import userApi from "../api/modules/user.api";
+// import { setUser } from "../redux/features/userSlice";
 // import { LoadingButton } from "@mui/lab";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 const IntroducePage = () => {
   const { themeMode } = useSelector((state) => state.themeMode);
   const isLightTheme = themeMode === "light"; 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [isLoginRequest, setIsLoginRequest] = useState(false);
-  const signinForm = useFormik({
-    initialValues: {
-      password: "",
-      username: "",
-    },
-    validationSchema: Yup.object({
-      username: Yup.string()
-        .min(8, "Username minimum 8 characters")
-        .required("Username is required"),
-      password: Yup.string()
-        .min(8, "Password minimum 8 characters")
-        .required("Password is required"),
-    }),
-    onSubmit: async (values) => {
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const [isLoginRequest, setIsLoginRequest] = useState(false);
+  // const signinForm = useFormik({
+  //   initialValues: {
+  //     password: "",
+  //     username: "",
+  //   },
+  //   validationSchema: Yup.object({
+  //     username: Yup.string()
+  //       .min(8, "Username minimum 8 characters")
+  //       .required("Username is required"),
+  //     password: Yup.string()
+  //       .min(8, "Password minimum 8 characters")
+  //       .required("Password is required"),
+  //   }),
+  //   onSubmit: async (values) => {
     
-      setIsLoginRequest(true);
-      const { response, err } = await userApi.signin(values);
+  //     setIsLoginRequest(true);
+  //     const { response, err } = await userApi.signin(values);
 
-      setIsLoginRequest(false);
+  //     setIsLoginRequest(false);
 
-      if (response) {
-        signinForm.resetForm();
-        dispatch(setUser(response));
-        window.location.reload();
-      }
+  //     if (response) {
+  //       signinForm.resetForm();
+  //       dispatch(setUser(response));
+  //       window.location.reload();
+  //     }
 
-      if (err) {
-        toast.error(err.message);
+  //     if (err) {
+  //       toast.error(err.message);
        
-      }
-    },
-  });
-  const { appState } = useSelector((state) => state.appState);
-  const [isStart, setIsStart] = useState(false);
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  const checkIntroState = appState === "intro" ? true : false;
-  const handleNavigateMobile = () => {
-    navigate("/signin");
-  };
-  const inputlabelcss = {
-    "& .MuiOutlinedInput-root": {
-      "&.Mui-focused fieldset": {
-        borderColor: "#fff",
-      },
-    },
-    "& label.Mui-focused": {
-      color: "#fff",
-    },
-  };
+  //     }
+  //   },
+  // });
+  // const { appState } = useSelector((state) => state.appState);
+  // const [isStart, setIsStart] = useState(false);
+  // const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  // const checkIntroState = appState === "intro" ? true : false;
+  // const handleNavigateMobile = () => {
+  //   navigate("/signin");
+  // };
+  // const inputlabelcss = {
+  //   "& .MuiOutlinedInput-root": {
+  //     "&.Mui-focused fieldset": {
+  //       borderColor: "#fff",
+  //     },
+  //   },
+  //   "& label.Mui-focused": {
+  //     color: "#fff",
+  //   },
+  // };
   return (
     <div style={{ marginTop: "64px" }}>
       <Box

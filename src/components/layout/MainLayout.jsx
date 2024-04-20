@@ -41,7 +41,7 @@ const MainLayout = () => {
       const { response, err } = await favoriteApi.getList();
 
       if (response) dispatch(setListFavorites(response));
-      if (err) toast.error(err.message);
+      // if (err) toast.error(err.message);
     };
 
     if (userState) getFavorites();
