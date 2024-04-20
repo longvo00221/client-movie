@@ -182,6 +182,7 @@ const TvSeries = ({
                       sx={{
                         display: "flex",
                         flexDirection: { md: "row", xs: "column" },
+                        justifyContent: "flex-start",
                         alignItems: "flex-start",
                         marginBottom: "20px",
                         paddingBottom: "20px",
@@ -263,6 +264,7 @@ const TvSeries = ({
                           sx={{
                             display: "block",
                             fontSize: { md: "25px", xs: "20px" },
+                            textAlign: "left",
                           }}
                         >
                           {episode.name}
